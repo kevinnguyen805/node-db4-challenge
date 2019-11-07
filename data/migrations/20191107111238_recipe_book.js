@@ -25,6 +25,7 @@ exports.up = function(knex) {
                .inTable('ingredients')
                .onDelete('RESTRICT')
                .onUpdate('CASCADE')
+          tbl.string('ingredient_quantity').notNullable()
      })
 };
 
