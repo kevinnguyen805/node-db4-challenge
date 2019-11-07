@@ -17,5 +17,8 @@ function getShoppingList(id){
      .where({recipes_id:id})
 }
 function getInstructions(id){
-     
+     return db.select('recipes.name', 'instructions.recipe_instructions')
+     .from('instructions')
+     .join('recipes', 'recipes_id', '=', 'instructions.recipe_id')
+     .where({recipies_id:id})
 }
